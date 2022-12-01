@@ -337,7 +337,7 @@ public class Homework1130 {
 		if(p1.equals(p2)) {
 			msg ="비겼습니다.";
 			
-			System.out.println(msg);
+			return msg;
 		}
 		
 		if(p1.equals("가위") && p2.equals("보")) {
