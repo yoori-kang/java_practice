@@ -265,6 +265,7 @@ public class Homework1130 {
 	//	  *****
 	//	   ***
 	//	    *
+		
 	public static void q7() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("숫자 입력: ");
@@ -281,12 +282,12 @@ public class Homework1130 {
 			n--;
 			System.out.println();
 		}
-		int n2 = cnt-2;
-		for(int i=1; i<cnt; i++) {
-			for(int j=0; j<i; j++) {
+		int n2 = cnt-1;
+		for(int i=0; i<cnt; i++) {
+			for(int j=0; j<i+1; j++) {
 				System.out.print(" ");
 			}
-			for(int j=0; j<2*n2+1; j++) {
+			for(int j=0; j<2*n2-1; j++) {
 				System.out.print("*");
 			}
 			n2--;
@@ -302,33 +303,58 @@ public class Homework1130 {
 	// 1P유저기준에서 승/패/비김 여부를 출력해주세요.
 	public static void q8() {
 		
+		Scanner sc = new Scanner(System.in);
 		int win =0;
-		int even =0;
 		int lose =0;
+		int even =0;
 		
-		for(int i=0; i<3; i++) {
-			Scanner sc = new Scanner(System.in);
+		while(win < 2 && lose <2) {
+			
 			System.out.print("1P :" );
 			String p1 = sc.next();
 			System.out.print("2P : ");
 			String p2 = sc.next();
 			
-			if(p1.equals(p2)) {
-				System.out.println("비김");
-				even++;
-			}else if(p1.equals("가위") && p2.equals("보")) {
-				System.out.println("승");
-				win++;	
-			}else if(p1.equals("바위") && p2.equals("가위")) {
-				System.out.println("승");
-				win++;	
-			}else if(p1.equals("보") && p2.equals("바위")) {
-				System.out.println("승");
-				win++;	
-			}else {
-				System.out.println("패");
-				lose++;
-			}
-		}System.out.printf("%d승 %d무 %d패",win,even,lose);
+			//p1, p2 : 전달인자, calGameResult에 사용자로부터 입력받은 패를 전달
+			 
+			String msg = calGameResult(p1, p2, win, lose, even);
+			if(msg.equals("이겼습니다.")) win++;
+			if(msg.equals("비겼습니다.")) even++;
+			if(msg.equals("졌습니다.")) lose++;
+			
+			
+			System.out.println(msg);
+		}
+		
+		System.out.println(win +"승 " +even + "무" + lose + "패 하였습니다.");
+	}
+	
+	//반환형(return type) : 메서드의 실행이 끝났을 때 호출부로 변환할 값의 타입
+	//매개변수 : 호출부에서 전달하는 값의 전달인자를 저장하기 위한 변수
+	public static String calGameResult(String p1, String p2, int even, int win, int lose) {
+		String msg = "";
+		
+		if(p1.equals(p2)) {
+			msg ="비겼습니다.";
+			
+			System.out.println(msg);
+		}
+		
+		if(p1.equals("가위") && p2.equals("보")) {
+			msg = "이겼습니다.";
+			
+		}else if (p1.equals("바위") && p2.equals("가위")) {
+			msg = "이겼습니다.";
+			
+		}else if(p1.equals("보") && p2.equals("바위")) {
+			msg = "이겼습니다.";
+			
+		}else {
+			msg = "졌습니다.";
+			
+		}
+		
+		return msg;
 	}
 }
+
