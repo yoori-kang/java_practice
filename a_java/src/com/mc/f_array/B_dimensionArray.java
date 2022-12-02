@@ -10,7 +10,7 @@ public class B_dimensionArray {
 		
 		
 		//가변배열
-		//주소배열의 크기는 지정해야 하짐나, 값을 저장할 배열의 크기는 지정하지 않고 2차원배열을 초기화
+		//주소배열의 크기는 지정해야 하지만, 값을 저장할 배열의 크기는 지정하지 않고 2차원배열을 초기화
 		int[][]dArr = new int [2][];
 		dArr[0] = new int[3];
 		dArr[1] = new int[2];
@@ -41,7 +41,7 @@ public class B_dimensionArray {
 	private static void studyDarr() {
 		// 2차원 배열 선언
 		// int 2차원 배열을 선언해 보자
-		// 2차원 배열은 1차원 배열을 여러개 보관하는 배열이다.ㄷ
+		// 2차원 배열은 1차원 배열을 여러개 보관하는 배열이다.
 		int[][] dArr;
 		
 		// 2차원 배열의 초기화

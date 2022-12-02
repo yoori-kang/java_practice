@@ -6,7 +6,7 @@ public class z_quize {
 
 	public static void main(String[] args) {
 		
-		// TODO Auto-generated method stub
+		q3();
 
 	}
 
