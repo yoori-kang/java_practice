@@ -9,31 +9,63 @@ public class C_ArrayUtil {
 		
 		
 		
-		//asc(iArr);
-		//desc(iArr)
-		
-		// iArr에 담겨있는 값들을 오름차순으로 정렬해주세요.
-		// 오름차순은 작은 수가 앞에, 큰 수가 뒤에 오도록 정렬
-		
-		
-		// 기능 : 매개변수로 넘어온 두 int배열을 하나의 배열로 합쳐주는 메서드
-		// 메서드 이름 : merge
-		// 메서드를 작성하고 테스트까지 완료 해주세요.
-		// ex) int[] data = {1,2,3,4,5}
-		// int[] data2 = {6,7,8,9,0}
-		// merge(data,data2) -> [1,2,3,4,5,6,7,8,9,0]
-		
-//		int[] data = {1,2,3,4,5};
-//		int[] data2 = {6,7,8,9,0};
-//		
-//		int[] res = merge(data, data2);
-//		System.out.println(Arrays.toString(res));
+		// q1();
+		// q2();
+		// q3();
+				
+		int[] data = {1,2,3,4,5};
+		int[] res = remove(data,2);
+		System.out.println(Arrays.toString(res));
+				
+		int[] data2 = {1,2,3,4,5};
+		int[] res2 = subArr(data2,0,2);
+		System.out.println(Arrays.toString(res2));
 		
 		
 	}
 	
+	//기능 : 원하는 인덱스 구간의 데이터를 잘라내는 메서드
+	   //인덱스 구간 : 시작 인덱스 ~ 끝 인덱스의 앞 인덱스까지의 데이터
+	   //첫번째 매개변수 : 배열
+	   //두번째 매개변수 : 시작 인덱스
+	   //세번째 매개변수 : 끝 인덱스
+	   //메서드 명 : subArr
+	   //ex) int[] data = {1,2,3,4,5}
+	   //   subArr(data,0,2); -> [1,2]
+	
+	public static int[] subArr(int[] arr, int num1, int num2) {
+		int[] tmp = new int[num2-num1];
+		
+		for(int i=0; i<tmp.length; i++) {
+			tmp[i]=arr[num1+i];
+		}
+		return tmp;
+		
+	}
+	
+	//기능 : 원하는 인덱스의 데이터를 삭제하는 메서드
+	   //첫번째 매개변수 : 배열
+	   //두번째 매개변수 : 인덱스
+	   //메서드 명 : remove
+	   //ex) int[] data = {1,2,3,4,5};
+	   //    remove(data,2) -> [1,2,4,5]
+	
+	public static int[] remove(int[] arr, int idx){
+		int[] tmp = new int[arr.length-1];
+		int tidx=0;
+		
+		for(int i =0; i<arr.length; i++) {
+			if(i==idx) continue;
+			tmp[tidx]=arr[i];
+			tidx++;
+		}
+		return tmp;
+	}
+	
+	
+	
 	public static int[] merge(int[] arr1, int[] arr2) {
-		int[] bigdata = new int[arr1.length + arr2.length];
+		int[] bigaArr = new int[arr1.length + arr2.length];
 		
 		//매개변수로 전달받은 두 배열의 크기를 합친 크기의 새로운 배열을 생성
 		int[] bigArr = new int[arr1.length + arr2.length];
