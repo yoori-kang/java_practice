@@ -15,6 +15,8 @@ public class Payment {
 	}
 	
 	public void excute() {
+		
+		payPrice -= PercentDiscount.calDsicountAboutOrderPrice(order);
 		Account.getInstance().registerSales(payPrice);
 	}
 

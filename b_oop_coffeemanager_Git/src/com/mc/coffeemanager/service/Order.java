@@ -24,6 +24,7 @@ public class Order {
 		this.orderTitle = coffee.getName() + "[" + orderCnt + "잔]";
 		this.orderTime = LocalDateTime.now(); //현재 시간
 		this.orderPrice = coffee.getPrice() * orderCnt;
+		
 	}
 	
 	public void execute() {
