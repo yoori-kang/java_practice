@@ -6,6 +6,8 @@ import com.mc.tour.service.Airline;
 import com.mc.tour.service.Tour;
 import com.mc.tour.service.Tourist;
 
+//메서드 이름 : 동사 + 명사 (명령문)
+//				코드의 주어는 클래스(레퍼런스)이기 때문에 변수또는 메서드 이름에 주어에 해당하는 키워드는 없는 게 좋
 public class MainMenu {
 	
 	
